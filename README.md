@@ -11,6 +11,10 @@ Afwan is an on-demand service for providing tourists with local experts. Uber fo
   - Abdul R.
   - Izzedeen Ben
 
+### Cordova Installation Instructions
+
+  - [See Cordova documentation here](http://cordova.apache.org/docs/en/4.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface)
+
 ### Server backend with Python, Django, and MySQL
   - Chien Chen
   - Sama Kanbour
