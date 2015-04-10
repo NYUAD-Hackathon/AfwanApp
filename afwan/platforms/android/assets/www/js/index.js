@@ -50,30 +50,36 @@ var app = {
 
 app.initialize();
 
+function onDeviceReady() {
+	// onSuccess Callback
+	// This method accepts a Position object, which contains the
+	// current GPS coordinates
+	//
+	
+	var onSuccess = function(position) {
+		alert('Latitude: '          + position.coords.latitude          + '\n' +
+			  'Longitude: '         + position.coords.longitude         + '\n' +
+			  'Altitude: '          + position.coords.altitude          + '\n' +
+			  'Accuracy: '          + position.coords.accuracy          + '\n' +
+			  'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+			  'Heading: '           + position.coords.heading           + '\n' +
+			  'Speed: '             + position.coords.speed             + '\n' +
+			  'Timestamp: '         + position.timestamp                + '\n');
+	};
+	
 
-// onSuccess Callback
-// This method accepts a Position object, which contains the
-// current GPS coordinates
-//
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
-
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    alert("Please enable location services to use Afwan, or if you already have done so, reboot the phone please.");
-	navigator.app.exitApp();
+	// onError Callback receives a PositionError object
+	//
+	function onError(error) {
+		alert("Please enable location services and wifi to use Afwan. Otherwise, if the problem persists reboot the phone please.");
+		navigator.app.exitApp();
+	}
+	navigator.geolocation.getCurrentPosition(onSuccess, onError,{timeout:5000, maximumAge: 3000, enableHighAccuracy: true});
 }
 
-navigator.geolocation.getCurrentPosition(onSuccess, onError,{timeout:5000, maximumAge: 3000, enableHighAccuracy: true});
+document.addEventListener("deviceready", onDeviceReady, false);
+
+
 
 
 
