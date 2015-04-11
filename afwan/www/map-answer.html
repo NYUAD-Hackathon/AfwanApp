@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/map-answer.js"></script>
 
     <script>
 	var map;
@@ -68,8 +69,8 @@
         </div>
         <h4>ANSWER GOES HERE</h4>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-success approve">Approve</button>
-			<button type="button" class="btn btn-danger">Reject</button>
+			<button type="button" onclick="CheckRes('true')" class="btn btn-success approve">Approve</button>
+			<button type="button" onclick="CheckRes('false')" class="btn btn-danger">Reject</button>
 		</div>
           <a href="#"><button type="button" class="btn btn-default meet">Let's meet!</button></a>
         </div>

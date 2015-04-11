@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/map-answer.js"></script>
 
     <script>
 	var map;
@@ -45,7 +46,7 @@
 	setTimeout(function () {
 		$('.loader').hide();
 		$('.answer').show();
-    }, 1000);
+    }, 2000);
 
 
     </script>
@@ -59,17 +60,28 @@
         	<div id="pro_image"></div>
         	<div id="pro_details">
 				<div id="pro_name">Service Provider Name</div>
-				<div id="pro_rating"></div>	
+				<span class='glyphicon glyphicon-star'></span>
+				<span class='glyphicon glyphicon-star'></span>
+				<span class='glyphicon glyphicon-star'></span>
+				<span class='glyphicon glyphicon-star-empty'></span>
+				<span class='glyphicon glyphicon-star-empty'></span>
         	</div>
         </div>
         <h4>ANSWER GOES HERE</h4>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-success">Approve</button>
-			<button type="button" class="btn btn-danger">Reject</button>
+			<button type="button" onclick="CheckRes('true')" class="btn btn-success approve">Approve</button>
+			<button type="button" onclick="CheckRes('false')" class="btn btn-danger">Reject</button>
 		</div>
-          <a href="#"><button type="button" class="btn btn-default">Let's meet!</button></a>
+          <a href="#"><button type="button" class="btn btn-default meet">Let's meet!</button></a>
         </div>
     </div>
     <div id="map-canvas"></div>
+
+    <script>
+    $('.approve').click(function(){
+    	$('.btn-group').hide();
+    	$('.meet').show();
+	});
+	</script>
   </body>
 </html>
