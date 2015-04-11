@@ -25,33 +25,55 @@ def getUser(request, id):
     return JsonResponse(output)
 
 
-def getUnsolved(request):
-
-    # serialized_obj = serializers.serialize('json', UserRequest.objects.all())
-    data = UserRequest.objects.filter(answered__exact=False)
+def getUnsolvedHigher(minimumRate):
+    data = UserRequest.objects.filter(
+        answered__exact=False).order_by('-created_at')[:10]
     result = {}
     result.setdefault("list", [])
     for item in data:
         k = {}
+        k['id'] = item.id
         k['username'] = item.userID.username
-        # k['description'] = item.description
         k['longitude'] = item.longitude
         k['latitude'] = item.latitude
         k['payoff'] = item.payoff
         k['minimumRate'] = item.minimumRate
         k['content'] = item.content
+        k['created_at'] = item.created_at.strftime('%Y/%m/%d %H:%M')
         result["list"].append(k)
+    return result
+
+
+def getUnsolved(request):
+    result = getUnsolvedHigher(0)
     return JsonResponse(result)
 
 
 @csrf_exempt
 def postReq(request):
-    # try:
+    try:
         json_str = request.body.decode(encoding='UTF-8')
         data = json.loads(json_str)
         query = UserRequest(userID_id=data['userID'], longitude=data[
                             "longitude"], latitude=data["latitude"], content=data['content'], minimumRate=data["minimumRating"], payoff=data["payoff"])
         query.save()
-        return HttpResponse(status=200)
-    # except Exception as e:
-    #     return HttpResponse(e, status=500)
+        response = HttpResponse(status=200)
+        response['access-control-allow-origin'] = '*'
+        return response
+    except Exception as e:
+        return HttpResponse(str(e), status=500)
+
+
+@csrf_exempt
+def postRes(request):
+    try:
+        json_str = request.body.decode(encoding='UTF-8')
+        data = json.loads(json_str)
+        query = UserRespond(userID_id=data['userID'], requestID_id=data[
+                            'requestID'], content=data['content'])
+        query.save()
+        response = HttpResponse(status=200)
+        response['access-control-allow-origin'] = '*'
+        return response
+    except Exception as e:
+        return HttpResponse(str(e), status=500)

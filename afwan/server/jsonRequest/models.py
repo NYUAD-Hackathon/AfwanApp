@@ -30,4 +30,4 @@ class UserRespond(models.Model):
     requestID = models.ForeignKey(UserRequest)
     content = models.CharField(max_length=140)
     created_at = models.DateTimeField(auto_now_add=True)
-    rank = models.IntegerField()
+    rank = models.IntegerField(null=True)
