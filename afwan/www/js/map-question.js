@@ -43,17 +43,6 @@ $( document ).ready(function() {
 
 		    urlstr = "http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/req/";
 			var jsonData = '{"latitude":'+Latitude+', "longitude" :'+Longitude+', "payoff" : 1.5, "userID" :1 , "minimumRating" : 2, "content" : "' + $("#questiontxt").val() + '"}';
-			/*
-			var datatosend = [];
-			datatosend['latitude'] = Latitude;
-			datatosend['longitude'] = Longitude;
-			datatosend['payoff'] = 1.5;
-			datatosend['userid'] = 1;
-			datatosend['minimumRating'] = 2;
-			datatosend['content'] = $("#questiontxt").val();
-			*/
-			//var frm = $(this);
-			//var postdata = JSON.stringify(frm.serializeArray());
 			var postdata = $.parseJSON(jsonData);
 			var mypost = $.post(urlstr, jsonData).done( function(){
                 console.log('post was successful!');
