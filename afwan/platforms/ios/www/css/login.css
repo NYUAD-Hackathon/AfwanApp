@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:300,400,700);
+
+body, html {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    height: 100%;
+}
+
+body { 
+	font-family: 'Pt Sans Narrow', sans-serif;
+	font-weight: 300;
+	background: url(../img/back.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.app {
+	margin-top: 80px;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h3 {
+	font-weight: 300;
+}
+
+h1, h3 {
+	padding: 5px;
+	margin: auto;
+	width: 80%;
+	text-align: center;
+}
+
+.res-group {
+	width: 80%;
+	margin: auto;
+	margin-top: 60px;
+}
+
+.res-group .btn {
+	width: 100%;
+	background-color: #13EAA4;
+}
+
+.tran {
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.res-group span, a, input, button {
+	color: #fff !important;
+	text-decoration: none;
+	border: none !important;
+}
+
+.input-group, button {
+	margin-top: 5px;
+}
+
+input::-webkit-input-placeholder {
+   color: #fff !important;
+}
