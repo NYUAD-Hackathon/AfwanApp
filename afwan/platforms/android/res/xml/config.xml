@@ -7,18 +7,6 @@
     <feature name="Compass">
         <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
     </feature>
-    <feature name="HttpRequest">
-        <param name="android-package" value="plugin.http.request.HttpRequest" />
-    </feature>
-    <feature name="GoogleMaps">
-        <param name="android-package" value="plugin.google.maps.GoogleMaps" />
-    </feature>
-    <feature name="External">
-        <param name="android-package" value="plugin.google.maps.External" />
-    </feature>
-    <feature name="Geocoder">
-        <param name="android-package" value="plugin.google.maps.MyGeocoder" />
-    </feature>
     <name>Afwan</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
