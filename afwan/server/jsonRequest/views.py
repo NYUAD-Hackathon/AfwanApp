@@ -49,6 +49,24 @@ def getUnsolved(request):
     return JsonResponse(result)
 
 
+def reqAns(request, id):
+
+    data = UserRespond.objects.filter(
+        requestID_id__exact=id)
+    result = {}
+    result.setdefault("list", [])
+    for item in data:
+        k = {}
+        k['id'] = item.id
+        k['username'] = item.userID.username
+        k['longitude'] = item.longitude
+        k['latitude'] = item.latitude
+        k['content'] = item.content
+        k['created_at'] = item.created_at.strftime('%Y/%m/%d %H:%M')
+        result["list"].append(k)
+    return JsonResponse(result)
+
+
 @csrf_exempt
 def postReq(request):
     try:
