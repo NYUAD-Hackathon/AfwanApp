@@ -20,6 +20,10 @@ body {
 	background-size: cover;
 }
 
+.clear {
+	clear: both;
+}
+
 .box {
 	height: 70%;
 	display: block;
@@ -53,11 +57,12 @@ h3 {
 
 .btn {
 	width: 100%;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .btn-default {
 	background-color: #13EAA4;
+	border: 1px solid red;
 }
 
 .btn-default:hover {
@@ -76,12 +81,12 @@ h3 {
 
 .input-group, button {
 	margin-top: 10px;
-	height: 40px;
+	height: 50px;
 }
 
 .input-group input {
-	height: 40px;
-	font-size: 14px;
+	height: 50px;
+	font-size: 18px;
 }
 
 input::-webkit-input-placeholder {
@@ -98,19 +103,26 @@ input::-webkit-input-placeholder {
 
 /*QUESTION PAGE*/
 
-/*#question-page {
-	background: url(../img/back.png) no-repeat center center fixed; 
-}*/
+#question-page, #service-page {
+	/*background: url(../img/doha.jpg) no-repeat center center fixed; */
+	/*background-size: 500px auto;*/
+	background-image: none;
+	background-color: #2FCC71;
+}
 
-#question {
+#question-page h3 {
+	text-transform: uppercase;
+}
+
+#questiontxt {
 	font-size: 18px;
+	border-radius: 0;
 }
 
 #map-canvas {
-	height: 200px;
+	height: 300px;
 	margin: 0px;
 	padding: 0px;
-	bottom: 0px;
 	display: block;
 }
 
@@ -119,10 +131,11 @@ input::-webkit-input-placeholder {
 }
 
 #cairo {
+	border-radius: 50%;
 	display: block;
 	width: 100px;
 	height: 100px;
-	background-image: url(../img/cairo.png);
+	background-image: url(../img/abu.jpg);
 	background-size: 100px 100px;
 	margin: auto;
 	margin-top: 20px;
@@ -153,6 +166,10 @@ input::-webkit-input-placeholder {
 	width: 50%;
 }
 
+.btn-group.service .btn {
+	width: 33%;
+}
+
 #user {
 	clear: both;
 	width: 100%;
@@ -173,14 +190,30 @@ input::-webkit-input-placeholder {
 	float: left;
 }
 
-@media screen and (max-height: 500px ){
+.meet {
+	display: none;
+}
+
+@media screen and (max-height: 500px){
 	#map-canvas {
 		display: none;
 	}
 }
 
-.submitquestionBTN{
-width:200px;
+
+
+
+
+
+
+
+
+
+
+/*OTHER*/
+
+.submitquestionBTN {
+	width:200px;
 }
 
 .price-box {

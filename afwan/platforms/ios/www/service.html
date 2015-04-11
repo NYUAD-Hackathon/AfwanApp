@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Afwan - Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+    <script>
+    var map;
+    /*function initialize() {
+    var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+    var mapOptions = {zoom: 4,center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    var marker = new google.maps.Marker({position: myLatlng,map: map,title: 'Afwan'});
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);*/
+    
+    function initialize() {
+        var mapOptions = {zoom: 3,center: new google.maps.LatLng(0, -180),mapTypeId: google.maps.MapTypeId.TERRAIN};
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
+        var nav = [
+            new google.maps.LatLng(37.772323, -122.214897), new google.maps.LatLng(21.291982, -157.821856)];
+            var nav_path = new google.maps.Polyline({
+            path: nav,
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+        });
+
+        nav_path.setMap(map);
+    }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>    
+  <body id="question-page">
+    <div class="box">
+        <div class="res-group">
+	        <div id="user">
+	            <div id="pro_image"></div>
+	            <div id="pro_details">
+	                <div id="pro_name">Tourist Name 2</div>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	            </div>
+	            
+	        </div>
+	        <h4>Question goes here...</h4>
+	        <div class="btn-group service" role="group" aria-label="...">
+	            <a href="service-answer.html"><button type="button" class="btn btn-success">Answer</button></a>
+	            <button type="button" class="btn btn-danger">Ignore</button>
+	            <button type="button" class="btn btn-warning">Report</button>
+	        </div>
+        </div>
+
+        <div class="res-group answer">
+	        <div id="user">
+	            <div id="pro_image"></div>
+	            <div id="pro_details">
+	                <div id="pro_name">Tourist Name 2</div>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	                <span class='glyphicon glyphicon-star'></span>
+	            </div>
+	            
+	        </div>
+	        <h4>Question goes here...</h4>
+	        <div class="btn-group service" role="group" aria-label="...">
+	            <a href="service-answer.html"><button type="button" class="btn btn-success">Answer</button></a>
+	            <button type="button" class="btn btn-danger">Ignore</button>
+	            <button type="button" class="btn btn-warning">Report</button>
+	        </div>
+        </div>
+    </div>
+    
+  </body>
+</html>
