@@ -19,7 +19,7 @@ class UserRequest(models.Model):
     payoff = models.FloatField()
 
 
-class UserRes(models.Model):
+class UserRespond(models.Model):
     userID = models.IntegerField()
     content = models.CharField(max_length=140)
     created_at = models.DateTimeField(auto_now_add=True)
