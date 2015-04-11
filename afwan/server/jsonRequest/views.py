@@ -7,6 +7,7 @@ from django.forms.models import model_to_dict
 from django.core import serializers
 from django.views.decorators.csrf import csrf_protect
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 # assuming obj is a model instance
 
@@ -23,7 +24,7 @@ def getUnsolved(request):
     serialized_obj = serializers.serialize('json', UserRequest.objects.all())
     return HttpResponse(serialized_obj)
 
-
+@csrf_exempt
 def postReq(request):
     json_str = request.body.decode(encoding='UTF-8')
     data = json.loads(json_str)
