@@ -179,6 +179,23 @@
       </dict>
     </array>
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string></string>
+    <string>Show your location on the map</string>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyCmgGBKcFLMhVWI020s57xSe3_QpBQNS5M</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.nyuad.afwan</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.nyuad.afwan</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>
