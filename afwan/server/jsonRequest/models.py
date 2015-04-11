@@ -28,6 +28,9 @@ class UserRequest(models.Model):
 class UserRespond(models.Model):
     userID = models.ForeignKey(User)
     requestID = models.ForeignKey(UserRequest)
-    content = models.CharField(max_length=140)
+    content = models.CharField(blank=True, null=True, max_length=140)
     created_at = models.DateTimeField(auto_now_add=True)
-    rank = models.IntegerField(null=True)
+    rank = models.IntegerField(blank=True, null=True)
+    accepted = models.NullBooleanField(default=None)
+    longitude = models.FloatField(blank=True, null=True)
+    latitude = models.FloatField(blank=True, null=True)
