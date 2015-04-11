@@ -8,18 +8,27 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/map-question.js"></script>
   </head>
   <body id="question-page">
     <div class="box">
         <h3>Welcome to Cairo, Kevin.</h3>
         <div id="cairo"></div>
         <div class="res-group">
-          <input type="text" placeholder="Ask for guidance...">
-          <a href="map.html"><button type="button" class="btn btn-default">Submit</button></a>
+            <form id="questionmainform">
+                <input id="latitutefld"type="hidden" value="" name="latitude"/>
+                <input id="longitudefld"type="hidden" value="" name="longitude"/>
+                <input type="hidden" value="1.5" name="payoff"/>
+                <input type="hidden" value="1" name="userid"/>
+                <input type="hidden" value="2" name="minimumRating"/>
+                <input id="questiontxt" type="text" placeholder="Ask for guidance...">
+                <button type="submit" class="btn btn-default" id="submitQST">Submit</button>
+          </form>
         </div>
     </div>
     <div id="map-canvas"></div>
     <div id="geolocation"></div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/map-question.js"></script>
   </body>
 </html>
