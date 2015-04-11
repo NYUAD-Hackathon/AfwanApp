@@ -55,7 +55,7 @@ $( document ).ready(function() {
 			var mypost = $.post(urlstr, jsonData).done( function(){
                 console.log('post was successful!');
                 $.notify('Your question has been submited','sucess');
-              //  location.href = "map-answer.html";
+                location.href = "map-answer.html";
 			});
 			mypost.fail(function() {
                  console.log('post failed!');
