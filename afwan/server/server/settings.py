@@ -42,19 +42,12 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-<<<<<<< HEAD
     'django.middleware.csrf.CsrfViewMiddleware',
-=======
-    # 'django.middleware.csrf.CsrfViewMiddleware',
->>>>>>> django
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-<<<<<<< HEAD
-=======
 
->>>>>>> django
 )
 
 ROOT_URLCONF = 'server.urls'
