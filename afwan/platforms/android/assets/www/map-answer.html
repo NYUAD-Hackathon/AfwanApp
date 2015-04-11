@@ -14,38 +14,6 @@
     <script type="text/javascript" src="js/map-answer.js"></script>
 
     <script>
-	/*
-	var map;
-    function initialize() {
-	var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-	var mapOptions = {zoom: 4,center: myLatlng
-	}
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-	var marker = new google.maps.Marker({position: myLatlng,map: map,title: 'Afwan'});
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
-	
-	function initialize() {
-		var mapOptions = {zoom: 3,center: new google.maps.LatLng(0, -180),mapTypeId: google.maps.MapTypeId.TERRAIN};
-
-		var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-
-		var nav = [
-			new google.maps.LatLng(37.772323, -122.214897), new google.maps.LatLng(21.291982, -157.821856)];
-			var nav_path = new google.maps.Polyline({
-			path: nav,
-			geodesic: true,
-			strokeColor: '#FF0000',
-			strokeOpacity: 1.0,
-			strokeWeight: 2
-		});
-
-		nav_path.setMap(map);
-	}
-	
-	google.maps.event.addDomListener(window, 'load', initialize);
-    */
 
 	setTimeout(function () {
 		$('.loader').hide();
@@ -57,13 +25,13 @@
   </head>    
   <body id="question-page">
     <div class="box">
-        <h3>QUESTION GOES HERE</h3>
+        <h3 id="question">QUESTION</h3>
         <div class="loader"></div>
         <div class="res-group answer">
         <div id="user">
         	<div id="pro_image"></div>
         	<div id="pro_details">
-				<div id="pro_name">Service Provider Name</div>
+				<div id="pro_name">Ahmad Khaled</div>
 				<span class='glyphicon glyphicon-star'></span>
 				<span class='glyphicon glyphicon-star'></span>
 				<span class='glyphicon glyphicon-star'></span>
@@ -73,10 +41,11 @@
         </div>
         <h4>ANSWER GOES HERE</h4>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" onclick="CheckRes('true')" class="btn btn-success approve">Approve</button>
-			<button type="button" onclick="CheckRes('false')" class="btn btn-danger">Reject</button>
+			<button type="button" class="btn btn-success approve">Approve</button>
+			<button type="button" class="btn btn-danger reject">Reject</button>
 		</div>
           <a href="#"><button type="button" class="btn btn-default meet">Let's meet!</button></a>
+          <a href="#"><button type="button" class="btn btn-default meet">Follow-up</button></a>
         </div>
     </div>
     <div id="map-canvas"></div>
@@ -86,6 +55,17 @@
     	$('.btn-group').hide();
     	$('.meet').show();
 	});
+	$('.reject').click(function(){
+		$('.loader').show();
+		$('.answer').hide();
+		setTimeout(function () {
+		$('.loader').hide();
+		$('.answer').show();
+    	}, 1000);
+	});
+
+	$("#question").html(window.localStorage.getItem("question"));
+
 	</script>
   </body>
 </html>

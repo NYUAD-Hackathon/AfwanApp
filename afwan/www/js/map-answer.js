@@ -3,8 +3,6 @@ $(document).ready(function () {
         div: '#map-canvas',
         lat: 24.522807,
         lng: 54.435447,
-        width: '500px',
-        height: '500px',
         zoom: 12,
         zoomControl: true,
         zoomControlOpt: {
@@ -14,7 +12,6 @@ $(document).ready(function () {
         panControl: false
     });
 
-	
 	map.drawRoute({
         origin: [24.522807, 54.435447],
         destination: [24.540274, 54.421541],

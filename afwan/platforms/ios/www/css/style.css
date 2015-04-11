@@ -107,7 +107,7 @@ input::-webkit-input-placeholder {
 	/*background: url(../img/doha.jpg) no-repeat center center fixed; */
 	/*background-size: 500px auto;*/
 	background-image: none;
-	background-color: #2FCC71;
+	background-color: #9C59B8;
 }
 
 #question-page h3 {
@@ -141,7 +141,7 @@ input::-webkit-input-placeholder {
 	margin-top: 20px;
 }
 
-#question-page input {
+#question-page input, #response {
 	border-bottom: 1px solid #fff;
 	border-top: none !important;
 	border-left: none !important;
