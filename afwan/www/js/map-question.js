@@ -38,6 +38,9 @@ $( document ).ready(function() {
 		
 		$( "#questionmainform" ).submit(function( event ) {
             console.log('main form was submitted!');
+            
+            window.localStorage.setItem("question", $("#questiontxt").val());
+
 		    urlstr = "http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/req/";
 			var jsonData = '{"latitude":'+Latitude+', "longitude" :'+Longitude+', "payoff" : 1.5, "userID" :1 , "minimumRating" : 2, "content" : "' + $("#questiontxt").val() + '"}';
 			/*
