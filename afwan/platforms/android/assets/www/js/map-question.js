@@ -23,7 +23,7 @@ function onSuccess(position) {
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-    alert('Could not get your location. Please enable location and try again later.');
+    onSuccess({coords: {latitude: 24.4667, longitude: 54.3667}});
 }
 
 function initialize() {
