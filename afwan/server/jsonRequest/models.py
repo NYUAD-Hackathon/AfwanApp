@@ -8,7 +8,7 @@ class User(models.Model):
     minimumpayoff = models.FloatField()
 
     def __str__(self):
-        return str(self.id)
+        return "user:" + str(self.id) + " " + self.username
 
 
 class UserRequest(models.Model):
@@ -18,8 +18,11 @@ class UserRequest(models.Model):
     longitude = models.FloatField()
     latitude = models.FloatField()
     answered = models.BooleanField(default=False)
-    payoff = models.FloatField()
-    minimumRate = models.IntegerField()
+    payoff = models.FloatField(default=0)
+    minimumRate = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.userID.username + " asked:" + self.content
 
 
 class UserRespond(models.Model):
