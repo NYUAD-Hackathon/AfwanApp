@@ -26,6 +26,10 @@ body {
 	padding-top: 80px;
 }
 
+input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+
 h1, h3 {
 	padding: 5px;
 	margin: auto;
@@ -49,10 +53,14 @@ h3 {
 
 .btn {
 	width: 100%;
+	font-size: 16px;
+}
+
+.btn-default {
 	background-color: #13EAA4;
 }
 
-.btn:hover {
+.btn-default:hover {
 	background-color: #11d293;
 }
 
@@ -67,7 +75,13 @@ h3 {
 }
 
 .input-group, button {
-	margin-top: 5px;
+	margin-top: 10px;
+	height: 40px;
+}
+
+.input-group input {
+	height: 40px;
+	font-size: 14px;
 }
 
 input::-webkit-input-placeholder {
@@ -84,14 +98,20 @@ input::-webkit-input-placeholder {
 
 /*QUESTION PAGE*/
 
-#question-page {
+/*#question-page {
 	background: url(../img/back.png) no-repeat center center fixed; 
+}*/
+
+#question {
+	font-size: 18px;
 }
 
 #map-canvas {
-	height: 30%;
+	height: 200px;
 	margin: 0px;
 	padding: 0px;
+	bottom: 0px;
+	display: block;
 }
 
 .gmnoprint, .gmnoscreen, .gm-style-cc {
@@ -105,7 +125,7 @@ input::-webkit-input-placeholder {
 	background-image: url(../img/cairo.png);
 	background-size: 100px 100px;
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
 #question-page input {
@@ -115,8 +135,48 @@ input::-webkit-input-placeholder {
 	border-right: none !important;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0);
-	/*padding-left: 5px;*/
 	margin-bottom: 10px;
+	height: 40px;
+}
+
+
+/*ANSWER*/
+.answer {
+	display: none;
+}
+
+.btn-group {
+	width: 100%;
+}
+
+.btn-group .btn {
+	width: 50%;
+}
+
+#user {
+	clear: both;
+	width: 100%;
+	height: 40px;
+}
+
+#pro_image {
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-image: url(../img/user.png);
+	background-size: 30px 30px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+#pro_image, #pro_details {
+	float: left;
+}
+
+@media screen and (max-height: 500px ){
+	#map-canvas {
+		display: none;
+	}
 }
 
 .submitquestionBTN{

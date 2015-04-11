@@ -53,7 +53,8 @@ $( document ).ready(function() {
 			//var postdata = JSON.stringify(frm.serializeArray());
 			var postdata = $.parseJSON(jsonData);
 			var mypost = $.post(urlstr, jsonData).done( function(){
-                 console.log('post was successful!');
+                console.log('post was successful!');
+                location.href = "map-answer.html";
 			});
 			mypost.fail(function() {
                  console.log('post failed!');
