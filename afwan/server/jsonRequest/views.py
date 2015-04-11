@@ -77,7 +77,7 @@ def postReq(request):
         query = UserRequest(userID_id=data['userID'], longitude=data[
                             "longitude"], latitude=data["latitude"], content=data['content'], minimumRate=data["minimumRating"], payoff=data["payoff"])
         query.save()
-        response = HttpResponse(status=200)
+        response = HttpResponse(query.id, status=200)
         response['access-control-allow-origin'] = '*'
         return response
     except Exception as e:
@@ -93,7 +93,8 @@ def postRes(request):
                             'requestID'], content=data.get('content', None), longitude=data.get(
                             "longitude", None), latitude=data.get("latitude", None))
         query.save()
-        response = HttpResponse(status=200)
+
+        response = HttpResponse(query.id,status=200)
         response['access-control-allow-origin'] = '*'
         return response
     except Exception as e:
