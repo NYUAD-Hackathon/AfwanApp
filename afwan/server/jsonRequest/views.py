@@ -20,9 +20,14 @@ def getUser(request, id):
     return JsonResponse(output)
 
 
+def getUnsolvedHigh(request, payoff):
+    result = getUnsolvedHigher(payoff)
+    return JsonResponse(result)
+
+
 def getUnsolvedHigher(minimumRate):
     data = UserRequest.objects.filter(
-        answered__exact=False).order_by('-created_at')[:10]
+        answered__exact=False).filter(payoff__gte=minimumRate).order_by('-created_at')[:10]
     result = {}
     result.setdefault("list", [])
     for item in data:
@@ -104,7 +109,7 @@ def resCheck(request):
         query.accepted = data['approved']
 
         query2 = query.requestID
-        query2.answered= True
+        query2.answered = True
 
         query.save()
         query2.save()
