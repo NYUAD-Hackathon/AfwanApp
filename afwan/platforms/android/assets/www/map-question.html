@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Device Properties Example</title>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <title>Afwan - Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/map-question.js"></script>
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
   </head>
-  <body>
+  <body id="question-page">
+    <div class="box">
+        <h3>Welcome to Cairo, Kevin.</h3>
+        <div id="cairo"></div>
+        <div class="res-group">
+          <input type="text" placeholder="Ask for guidance...">
+          <a href="map.html"><button type="button" class="btn btn-default">Submit</button></a>
+        </div>
+    </div>
     <div id="map-canvas"></div>
     <div id="geolocation"></div>
   </body>

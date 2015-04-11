@@ -23,7 +23,7 @@ function onError(error) {
 
 function initialize() {
     console.log('reached initialize function');
-    navigator.geolocation.getCurrentPosition(onSuccess, onError,{timeout:5000, maximumAge: 3000, enableHighAccuracy: true});
+    navigator.geolocation.getCurrentPosition(onSuccess, onError,{timeout:10000, maximumAge: 3000, enableHighAccuracy: true});
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A2D3476A-94C4-4E67-9603-340C1309DB03</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Afwan</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BF920934E424FBAB54401A89332C8DD30065EAFE</key>
+		<string>https://github.com/NYUAD-Hackathon/AfwanApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>afwan/platforms/ios/Afwan.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BF920934E424FBAB54401A89332C8DD30065EAFE</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/NYUAD-Hackathon/AfwanApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BF920934E424FBAB54401A89332C8DD30065EAFE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BF920934E424FBAB54401A89332C8DD30065EAFE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AfwanApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
