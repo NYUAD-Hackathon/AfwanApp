@@ -8,7 +8,7 @@ class User(models.Model):
     minimumpayoff = models.FloatField()
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class UserRequest(models.Model):
@@ -19,10 +19,12 @@ class UserRequest(models.Model):
     latitude = models.FloatField()
     answered = models.BooleanField(default=False)
     payoff = models.FloatField()
+    minimumRate = models.IntegerField()
 
 
 class UserRespond(models.Model):
-    userID = models.IntegerField()
+    userID = models.ForeignKey(User)
+    requestID = models.ForeignKey(UserRequest)
     content = models.CharField(max_length=140)
     created_at = models.DateTimeField(auto_now_add=True)
     rank = models.IntegerField()
