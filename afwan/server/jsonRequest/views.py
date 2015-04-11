@@ -28,7 +28,7 @@ def getUser(request, id):
 def getUnsolved(request):
 
     # serialized_obj = serializers.serialize('json', UserRequest.objects.all())
-    data = UserRequest.objects.all()
+    data = UserRequest.objects.filter(answered__exact=False)
     result = {}
     result.setdefault("list", [])
     for item in data:
