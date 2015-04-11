@@ -8,6 +8,7 @@ urlpatterns = patterns('',
                        # url(r'^blog/', include('blog.urls')),
                        # url(r'^$', views.index, name='index'),
                        url(r'unsolved/list/', 'jsonRequest.views.getUnsolved'),
+                       url(r'res/', 'jsonRequest.views.postRes'),
 
                        url(r'req/', 'jsonRequest.views.postReq'),
                        url(r'^admin/', include(admin.site.urls)),

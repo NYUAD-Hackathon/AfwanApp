@@ -4,28 +4,31 @@
     <title>Afwan - Map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-	var map;
-	function initialize() {
-	var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-	var mapOptions = {zoom: 4,center: myLatlng
-	}
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-	var marker = new google.maps.Marker({position: myLatlng,map: map,title: 'Afwan'});
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
   </head>
-  <body>
+  <body id="question-page">
+    <div class="box">
+        <h3>Welcome to Abu Dhabi, Kevin.</h3>
+        <div id="cairo"></div>
+        <div class="res-group">
+            <form id="questionmainform">
+                <input id="latitutefld"type="hidden" value="" name="latitude"/>
+                <input id="longitudefld"type="hidden" value="" name="longitude"/>
+                <input type="hidden" value="1.5" name="payoff"/>
+                <input type="hidden" value="1" name="userid"/>
+                <input type="hidden" value="2" name="minimumRating"/>
+                <input id="questiontxt" type="text" placeholder="Ask for guidance...">
+                <button type="submit" class="btn btn-default" id="submitQST">Submit</button>
+          </form>
+        </div>
+    </div>
     <div id="map-canvas"></div>
+    <div id="geolocation"></div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/map-question.js"></script>
   </body>
 </html>
