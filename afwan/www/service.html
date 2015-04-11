@@ -61,12 +61,18 @@
 	        </div>
 	        <h4>Question goes here...</h4>
 	        <div class="btn-group service" role="group" aria-label="...">
-	            <a href="service-answer.html"><button type="button" class="btn btn-success">Answer</button></a>
+	            <button type="button" class="btn btn-success ans">Answer</button>
 	            <button type="button" class="btn btn-danger">Ignore</button>
 	            <button type="button" class="btn btn-warning">Report</button>
 	        </div>
         </div>
     </div>
+
+    <script>
+    $('.ans').click(function(){
+        window.location.href = "service-answer.html";
+    });
+    </script>
     
   </body>
 </html>
