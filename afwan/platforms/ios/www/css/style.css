@@ -103,10 +103,11 @@ input::-webkit-input-placeholder {
 
 /*QUESTION PAGE*/
 
-#question-page {
-	background: url(../img/doha.jpg) no-repeat center center fixed; 
-	background-size: 500px auto;
-	background-color: #AECAF2;
+#question-page, #service-page {
+	/*background: url(../img/doha.jpg) no-repeat center center fixed; */
+	/*background-size: 500px auto;*/
+	background-image: none;
+	background-color: #2FCC71;
 }
 
 #question-page h3 {
@@ -119,10 +120,9 @@ input::-webkit-input-placeholder {
 }
 
 #map-canvas {
-	height: 250px;
+	height: 300px;
 	margin: 0px;
 	padding: 0px;
-	bottom: 0px;
 	display: block;
 }
 
