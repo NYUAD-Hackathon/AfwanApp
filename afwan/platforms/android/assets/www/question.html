@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-dialog.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app container">
+		<form id="questionmainform">
+			<div class="form-group">
+			  <label for="comment">Question:</label>
+			  <textarea class="form-control" rows="5" id="questiontxt" name="content"></textarea>
+			  <input id="latitutefld"type="hidden" value="" name="latitude"/>
+			<input id="longitudefld"type="hidden" value="" name="longitude"/>
+				<input type="hidden" value="1.5" name="payoff"/>
+				<input type="hidden" value="1" name="userid"/>
+				<input type="hidden" value="2" name="minimumRating"/>
+			</div>
+			<button id="submitQST" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" type="submit" class="btn btn-primary submitquestionBTN">Submit</button>
+		</form>
+		
+		<div class="price-box">
+			<form class="form-horizontal form-pricing" role="form">				
+			  <div class="price-slider">
+				<h4 class="great">Amount</h4>
+				<span>Minimum $10 is required</span>
+				<div class="col-sm-12">
+				  <div id="slider"></div>
+				</div>
+			  </div>
+			  
+			</form>
+		</div>
+			
+            <div id="deviceready" class="blink" style="margin-top:30px">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+            <a href="map.html">Go to map</a>
+			
+        </div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
