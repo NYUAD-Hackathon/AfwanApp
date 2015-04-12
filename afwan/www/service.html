@@ -110,8 +110,9 @@
 		        	var ques = data.list[id].content;
 		        	var time = data.list[id].distime;
 		        	window.localStorage.setItem("tourist_name", name);
-		        	window.localStorage.setItem("tourist_question", question);
+		        	window.localStorage.setItem("tourist_question", ques);
 		        	window.localStorage.setItem("tourist_time", time);
+                    window.location.href = "service-answer.html";
 		        })
     			};		        
     		},
