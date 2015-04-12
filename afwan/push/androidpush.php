@@ -1,5 +1,5 @@
 <?php
-$vars = '{ "data": { "message": "You have a response from a local!" }, "registration_ids":["APA91bEP6BHJuCib5tT4_t1QHOYbv_s6AMpG48oYJvIalVkqGld5HvbEeoVPeYoeSz_Bc0mi9w_CipRDzG2QG9AsBbtW2Y0Qw4j9nvjLevnhRdHxn8PXynanAJqhtXjkUDjsPsXKw1-x"] }';
+$vars = '{ "data": { "message": "There is $2 question available 5 minutes away from you!" }, "registration_ids":["APA91bEP6BHJuCib5tT4_t1QHOYbv_s6AMpG48oYJvIalVkqGld5HvbEeoVPeYoeSz_Bc0mi9w_CipRDzG2QG9AsBbtW2Y0Qw4j9nvjLevnhRdHxn8PXynanAJqhtXjkUDjsPsXKw1-x"] }';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"https://android.googleapis.com/gcm/send");
 curl_setopt($ch, CURLOPT_POST, 1);

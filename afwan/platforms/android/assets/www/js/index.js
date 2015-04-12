@@ -4,11 +4,11 @@ function tokenHandler(result){
 }
 function successHandler(result) {
     // todo for android
-    alert('android success = ' + result);
+    //alert('android success = ' + result);
 }
 function errorHandler(error){
     // do nothing
-    alert('android error = ' + error);
+    //alert('android error = ' + error);
 }
 function onNotificationAPN (e) {
     // when the iphone receives a push notification
@@ -18,20 +18,19 @@ function onNotificationAPN (e) {
 
 function onNotification(e) {
     // todo for android
-    alert("notification received"+e.event);
+    //alert("notification received"+e.event);
 
     if (e.event == 'registered') {
-        case 'registered':
         if ( e.regid.length > 0 ) {
             // Your GCM push server needs to know the regID before it can push to this device
             // here is where you might want to send it the regID for later use.
             console.log("regID = " + e.regid);
         }
     } else if (e.event == 'message') {
-        alert("notification received"+e.payload.message);
+        location.href = "service.html";
         if (!e.foreground) {
             // we were launched because the user touched a notification in the notification tray.
-            alert(e.payload.message);
+            //alert(e.payload.message);
         }
     }
 }
