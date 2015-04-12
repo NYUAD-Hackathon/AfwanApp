@@ -7,6 +7,8 @@ urlpatterns = patterns('',
                        # url(r'^$', 'server.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
                        # url(r'^$', views.index, name='index'),
+                       url(r'user/req/(?P<id>\d+)', 'jsonRequest.views.getUserReq'),
+
                        url(r'unsolved/higher/(?P<payoff>\d+)', 'jsonRequest.views.getUnsolvedHigh'),
                        url(r'unsolved/list/', 'jsonRequest.views.getUnsolved'),
                        url(r'req/ans/(?P<id>\d+)', 'jsonRequest.views.reqAns'),
