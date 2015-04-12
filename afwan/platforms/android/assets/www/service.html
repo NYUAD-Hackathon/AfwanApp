@@ -46,7 +46,8 @@
   </head>    
   <body id="question-page">
     <div class="box">
-        <div class="res-group">
+    	<h3>TOURIST REQUESTS</h3>
+<!--         <div class="res-group">
 	        <div id="user">
 	            <div id="pro_image"></div>
 	            <div id="pro_details">
@@ -57,7 +58,6 @@
 	                <span class='glyphicon glyphicon-star'></span>
 	                <span class='glyphicon glyphicon-star'></span>
 	            </div>
-	            
 	        </div>
 	        <h4>Question goes here...</h4>
 	        <div class="btn-group service" role="group" aria-label="...">
@@ -65,13 +65,59 @@
 	            <button type="button" class="btn btn-danger">Ignore</button>
 	            <button type="button" class="btn btn-warning">Report</button>
 	        </div>
-        </div>
+        </div> -->
     </div>
 
     <script>
-    $('.ans').click(function(){
-        window.location.href = "service-answer.html";
-    });
+
+    addQuestions();
+
+    function addQuestions() {
+    	$.ajax({url:'http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/unsolved/list/',
+    		type:"GET",
+    		success: function(data){
+    			for (d in data.list) {
+    				var usr = data.list[d];
+    				var t = Math.floor((Math.random() * 10) + 1);
+    				data.list[d].distime = t;
+    			var content = '';
+    			content += '<div class="res-group">\
+			        <div id="user">\
+			            <div id="pro_image"></div>\
+			            <div id="pro_details">\
+			                <div id="pro_name">'+ usr.username +'</div>\
+			                <div id="pro_time">'+ t + ' min away</div>\
+			                <span class="glyphicon glyphicon-star"></span>\
+			                <span class="glyphicon glyphicon-star"></span>\
+			                <span class="glyphicon glyphicon-star"></span>\
+			                <span class="glyphicon glyphicon-star"></span>\
+			                <span class="glyphicon glyphicon-star"></span>\
+			            </div>\
+			        </div>\
+			        <h4>'+ usr.content +'</h4>\
+			        <div class="btn-group service" role="group" aria-label="...">\
+			            <button type="button" class="btn btn-success ans" id="';
+			        content += d +'_q';
+			        content += '" name="' + d + '">Answer</button>\
+			            <button type="button" class="btn btn-danger">Ignore</button>\
+			            <button type="button" class="btn btn-warning">Report</button>\
+			        </div>\
+		        </div>';
+		        $('.box').append(content);
+		        $('#' + d +'_q').click(function(e){
+		        	var id = $(e)[0].currentTarget.name;
+		        	var name = data.list[id].username;
+		        	var ques = data.list[id].content;
+		        	var time = data.list[id].distime;
+		        	window.localStorage.setItem("tourist_name", name);
+		        	window.localStorage.setItem("tourist_question", ques);
+		        	window.localStorage.setItem("tourist_time", time);
+                    window.location.href = "service-answer.html";
+		        })
+    			};		        
+    		},
+        });
+    }
     </script>
     
   </body>

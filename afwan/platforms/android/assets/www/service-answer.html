@@ -27,20 +27,20 @@
         });
 
         nav_path.setMap(map);
+        google.maps.event.addDomListener(window, 'load', initialize);
     }
-    
-    google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
   </head>    
   <body id="service-page">
     <div class="box">
-        <h3>QUESTION COMES HERE</h3>
+        <h3 id="question"></h3>
         <div class="res-group">
 	        <div id="user">
 	            <div id="pro_image"></div>
 	            <div id="pro_details">
-	                <div id="pro_name">Kevin Leblond</div>
+	                <div id="pro_name"></div>
+                    <div id="pro_time"></div>
 	                <span class='glyphicon glyphicon-star'></span>
 	                <span class='glyphicon glyphicon-star'></span>
 	                <span class='glyphicon glyphicon-star'></span>
@@ -54,5 +54,11 @@
             <a href="#"><button type="button" class="btn btn-default">Submit</button></a>
         </div>
     </div>
+    <script>  
+    $("#question").html(window.localStorage.getItem("tourist_question"));
+    $("#pro_name").html(window.localStorage.getItem("tourist_name"));
+    $("#pro_time").html(window.localStorage.getItem("tourist_time") + " min away");
+
+    </script>
   </body>
 </html>
