@@ -17,11 +17,15 @@ Mobile app to provide tourists a way to pay locals for help. The help is guarant
   - knowledgeable via rating system
 
 ## Software Components
+  - Django - Python, MySQL
+  - Cordova/PhoneGap
+  - AWS EC2
 
 ### Cordova Installation Instructions
 
   - [See Cordova documentation here](http://cordova.apache.org/docs/en/4.0.0//guide_cli_index.md.html#The%20Command-Line%20Interface)
-  - 
+
+
 ## Team 
   - Sama Kanbour (Carnegie Mellon University Qatar, France) <samakanbour@gmail.com>
   - Abderrahmane Melhaoui (Ecole Mohammadia d’Ingenieurs, Morocco) <melhaoui.abderrahmane@gmail.com>
@@ -40,11 +44,12 @@ Team members contributed to various parts of the hack. This breakdown is only a 
 
 ### Server backend with Python, Django, and MySQL
   - Chien Chen 
-  
+
 ### User Interface Design and Demo
   - Sama Kanbour 
   - Jihyun Kim 
   
+
 ## Mentors
   - Kartik Mandaville (Co-Founder, SpringRole, USA) <kar2905@gmail.com>
   - Ghady Rayess (Co-Founder and Managing Partner, FOO, Lebanon) <g@foo.mobi>
