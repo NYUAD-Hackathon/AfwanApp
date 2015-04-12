@@ -69,9 +69,6 @@
     </div>
 
     <script>
-    $('.ans').click(function(){
-        window.location.href = "service-answer.html";
-    });
 
     addQuestions();
 
@@ -81,13 +78,15 @@
     		success: function(data){
     			for (d in data.list) {
     				var usr = data.list[d];
-    				    			var content = '';
+    				var t = Math.floor((Math.random() * 10) + 1);
+    				data.list[id].distime = t;
+    			var content = '';
     			content += '<div class="res-group">\
 			        <div id="user">\
 			            <div id="pro_image"></div>\
 			            <div id="pro_details">\
 			                <div id="pro_name">'+ usr.username +'</div>\
-			                <div id="pro_time">'+ Math.floor((Math.random() * 10) + 1) + ' min away</div>\
+			                <div id="pro_time">'+ t + ' min away</div>\
 			                <span class="glyphicon glyphicon-star"></span>\
 			                <span class="glyphicon glyphicon-star"></span>\
 			                <span class="glyphicon glyphicon-star"></span>\
@@ -97,13 +96,23 @@
 			        </div>\
 			        <h4>'+ usr.content +'</h4>\
 			        <div class="btn-group service" role="group" aria-label="...">\
-			            <button type="button" class="btn btn-success ans">Answer</button>\
+			            <button type="button" class="btn btn-success ans" id="';
+			        content += d +'_q';
+			        content += '" name="' + d + '">Answer</button>\
 			            <button type="button" class="btn btn-danger">Ignore</button>\
 			            <button type="button" class="btn btn-warning">Report</button>\
 			        </div>\
 		        </div>';
 		        $('.box').append(content);
-
+		        $('#' + d +'_q').click(function(e){
+		        	var id = $(e)[0].currentTarget.name;
+		        	var name = data.list[id].username;
+		        	var ques = data.list[id].content;
+		        	var time = data.list[id].distime;
+		        	window.localStorage.setItem("tourist_name", name);
+		        	window.localStorage.setItem("tourist_question", question);
+		        	window.localStorage.setItem("tourist_time", time);
+		        })
     			};		        
     		},
         });
