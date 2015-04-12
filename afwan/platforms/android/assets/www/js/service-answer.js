@@ -14,7 +14,8 @@ var wayB;
 function goma()
 {
 	
-	var mapDiv = document.getElementById('mappy');
+    console.log("are we here??");
+	var mapDiv = document.getElementById('map-canvas');
 
 	var mapOptions = {
         zoom: 15, 
