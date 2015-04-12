@@ -3,6 +3,8 @@ var respondID;
 $(document).ready(function() {
 
     var requsetID=window.localStorage.getItem("questionID")
+    $("#question").html(window.localStorage.getItem("question"))
+
     $.ajax({
         url: 'http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/req/ans/' + requsetID,
         type: "GET",
