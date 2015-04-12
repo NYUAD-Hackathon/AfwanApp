@@ -21,11 +21,18 @@ $(document).ready(function () {
         strokeWeight: 6
 	});
 });
-// function CheckRes(x){
-//           $.ajax({url:'http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/res/check/',
-//           type:"POST",
-          
-//           data:'{"respondID":4, "approved":'+x+'}',
-//           success: function(){location.href="map.html";},
-//           });
-// }    
+function CheckRes(x){
+      $.ajax({url:'http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/res/check/',
+      type:"POST",
+      data:'{"respondID":4, "approved":'+x+'}',
+      success: function(){
+      	if(x == 'false')
+          {
+          location.href="map-answer.html";}
+        else{
+        	$('.btn-group').hide();
+    		$('.meet').show();}
+        }
+      });
+        
+}
