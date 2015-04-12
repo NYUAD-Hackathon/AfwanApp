@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Afwan - Map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -10,62 +11,56 @@
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyBi7e8AiTyqWiFt9vlbGqsAzGyRhVWqCsk&sensor=true"></script>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script src="js/gmaps.js"></script>
-    <script src="js/map-answer.js"></script>
     <script type="text/javascript" src="js/map-answer.js"></script>
-
     <script>
-
-	setTimeout(function () {
-		$('.loader').hide();
-		$('.answer').show();
-    }, 2000);
-
-
     </script>
-  </head>    
-  <body id="question-page">
-    <div class="box">
+    <script id="hidden-template" type="text/x-custom-template">
+        <div class="res-group answer">
+            <div id="user">
+                <div id="pro_image"></div>
+                <div id="pro_details">
+                    <div id="pro_name">Ahmad Khaled</div>
+                    <span class='glyphicon glyphicon-star'></span>
+                    <span class='glyphicon glyphicon-star'></span>
+                    <span class='glyphicon glyphicon-star'></span>
+                    <span class='glyphicon glyphicon-star-empty'></span>
+                    <span class='glyphicon glyphicon-star-empty'></span>
+                </div>
+            </div>
+            <h4 id="answer-h4">ANSWER GOES HERE</h4>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-success approve">Approve</button>
+                <button type="button" class="btn btn-danger reject">Reject</button>
+</div>
+                 <a href="map-question.html">
+                <button type="button" class="btn btn-default meet">Let''s meet!</button>
+            </a>
+            <a href="map-question.html">
+                <button type="button" class="btn btn-default meet">Follow-up</button>
+            </a>
+                <script>
+                $('.approve').click(function() {
+                    console.log('approve')
+                    CheckRes('true');
+                });
+                $('.reject').click(function() {
+                    CheckRes('false');
+                });
+                $("#question").html(window.localStorage.getItem("question"));
+                </script>
+
+
+
+        </div>
+    </script>
+</head>
+
+<body id="question-page">
+    <div id="answer-container" class="box">
         <h3 id="question">QUESTION</h3>
         <div class="loader"></div>
-        <div class="res-group answer">
-        <div id="user">
-        	<div id="pro_image"></div>
-        	<div id="pro_details">
-				<div id="pro_name">Ahmad Khaled</div>
-				<span class='glyphicon glyphicon-star'></span>
-				<span class='glyphicon glyphicon-star'></span>
-				<span class='glyphicon glyphicon-star'></span>
-				<span class='glyphicon glyphicon-star-empty'></span>
-				<span class='glyphicon glyphicon-star-empty'></span>
-        	</div>
-        </div>
-        <h4>ANSWER GOES HERE</h4>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-success approve">Approve</button>
-			<button type="button" class="btn btn-danger reject">Reject</button>
-		</div>
-          <a href="#"><button type="button" class="btn btn-default meet">Let's meet!</button></a>
-          <a href="#"><button type="button" class="btn btn-default meet">Follow-up</button></a>
-        </div>
     </div>
     <div id="map-canvas"></div>
+</body>
 
-    <script>
-    $('.approve').click(function(){
-    	$('.btn-group').hide();
-    	$('.meet').show();
-	});
-	$('.reject').click(function(){
-		$('.loader').show();
-		$('.answer').hide();
-		setTimeout(function () {
-		$('.loader').hide();
-		$('.answer').show();
-    	}, 1000);
-	});
-
-	$("#question").html(window.localStorage.getItem("question"));
-
-	</script>
-  </body>
 </html>
