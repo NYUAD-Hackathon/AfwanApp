@@ -15,7 +15,7 @@ var directionsDisplay;
 var wayA;
 var wayB;
 
-//Função de Inicio
+//Fun??o de Inicio
 
 function goma()
 {
@@ -23,32 +23,38 @@ function goma()
 	var mapDiv = document.getElementById('mappy');
 
 	var mapOptions = {
-	zoom: 15, 
-	
-	center: new google.maps.LatLng(24.4667,54.3667),
-	mapTypeId : google.maps.MapTypeId.ROADMAP
+        zoom: 15, 
+        center: new google.maps.LatLng(24.4667,54.3667),
+        mapTypeId : google.maps.MapTypeId.ROADMAP
 	}
-	//Cria o mapa do google, coloca as definições do mapa, como tipo de visualização, pode ser ROADMAP, SATELLITE, HYBRID, TERRAIN
+
+	//Cria o mapa do google, coloca as defini??es do mapa, como tipo de visualiza??o, pode ser ROADMAP, SATELLITE, HYBRID, TERRAIN
 	map = new google.maps.Map( mapDiv, mapOptions );
+
+	var myLatlng = new google.maps.LatLng(24.4667,54.3667);
 	
+	wayA = new google.maps.Marker({
+          position: myLatlng,
+          map: map
+        });
+
 	
-	 var control = document.createElement('DIV');
-  control.style.padding = '1px';
-  control.style.border = '1px solid #000';
-  control.style.backgroundColor = 'white';
-  control.style.cursor = 'pointer';
-  //control.innerHTML = '<img src="http://i47.tinypic.com/2dlp2fc.jpg" border="0" alt="Image and video hosting by TinyPic">';
-  control.index = 1;
+	var control = document.createElement('DIV');
+    control.style.padding = '1px';
+    control.style.border = '1px solid #000';
+    control.style.backgroundColor = 'white';
+    control.style.cursor = 'pointer';
+    control.index = 1;
   
   
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(control);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(control);
 	
-  google.maps.event.addDomListener(control, 'click', function() {
-    doMark = false;
-	 markNow();
-	
-	
-  });
+    /*
+    google.maps.event.addDomListener(control, 'click', function() {
+        doMark = false;
+        markNow();
+    });
+    */
   
  google.maps.event.addListener(map, "click", function(event) {
         if (!wayA) {
@@ -66,7 +72,7 @@ function goma()
 		  
         });
           
-	//Renderiza a rota, o draggable é diz se o waypoint é arrastavel ou não
+	//Renderiza a rota, o draggable ? diz se o waypoint ? arrastavel ou n?o
 	ren = new google.maps.DirectionsRenderer( {'draggable':true} );
 	ren.setMap(map);
 	//ren.setPanel(document.getElementById("directionsPanel"));
@@ -192,6 +198,7 @@ function save_waypoints()
 		if (doMark == false)
 {
 	
+    /*
 	google.maps.event.addListener(map, "click", function(event) {
         marker = new google.maps.Marker({
 			
@@ -203,6 +210,7 @@ function save_waypoints()
           infowindow.open(map, marker);
         });
     });
+    */
 }
 	}
 function doNothing() {}
@@ -212,7 +220,6 @@ function doNothing() {}
 		<body onLoad="goma()">
 <div id="mappy" style="float:left;width:70%; height:100%"></div>
 <!--<input type="button" value="Salvar Waypoints" onClick="save_waypoints()">-->
-<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
 <!--<div>
 			<label>Endereco</label>
 			<input type="text" id="endereco">-->
@@ -222,12 +229,6 @@ function doNothing() {}
 
 
 </div>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> 
-</script> 
-<script type="text/javascript"> 
-_uacct = "UA-162157-1";
-urchinTracker();
-</script> 
 
 </body>
 </html>
