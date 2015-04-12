@@ -21,7 +21,7 @@
     var marker = new google.maps.Marker({position: myLatlng,map: map,title: 'Afwan'});
     }
     google.maps.event.addDomListener(window, 'load', initialize);*/
-    
+
     function initialize() {
         var mapOptions = {zoom: 3,center: new google.maps.LatLng(0, -180),mapTypeId: google.maps.MapTypeId.TERRAIN};
 
@@ -39,11 +39,11 @@
 
         nav_path.setMap(map);
     }
-    
+
     google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
-  </head>    
+  </head>
   <body id="question-page">
     <div class="box">
     	<h3>TOURIST REQUESTS</h3>
@@ -109,16 +109,18 @@
 		        	var name = data.list[id].username;
 		        	var ques = data.list[id].content;
 		        	var time = data.list[id].distime;
+                                    console.log(data.list[id].id)
 		        	window.localStorage.setItem("tourist_name", name);
 		        	window.localStorage.setItem("tourist_question", ques);
 		        	window.localStorage.setItem("tourist_time", time);
-                    window.location.href = "service-answer.html";
+                                    window.localStorage.setItem("respondID", data.list[id].id);
+                                    window.location.href = "service-answer.html";
 		        })
-    			};		        
+    			};
     		},
         });
     }
     </script>
-    
+
   </body>
 </html>
