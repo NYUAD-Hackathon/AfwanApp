@@ -30,6 +30,14 @@ body {
 	padding-top: 80px;
 }
 
+.glyphicon-cog {
+	width: 40px;
+	height: 40px;
+	text-align: middle;
+	padding: 10px;
+	float: right;
+
+}
 input[type="text"], input[type="password"], textarea, select { 
     outline: none;
 }
@@ -408,4 +416,11 @@ hr.style {
     border: 0;
     border-bottom: 1px dashed #ccc;
     background: #999;
+}
+
+#response {
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Pt Sans Narrow', sans-serif;
+	font-weight: 300;
 }
