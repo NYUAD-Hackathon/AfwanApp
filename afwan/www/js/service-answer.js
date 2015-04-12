@@ -212,7 +212,7 @@ $(document).ready(function() {
         }
         else
         {
-            datastr= '{"content": "' + $('#response').val() + '","userID": 3,"requestID": ' + respondID + ',"latitude":'+destLong.k+',"longitude":'+destLong.D+'}'
+            datastr= '{"content": "' + $('#response').val() + '","userID": 3,"requestID": ' + respondID + ',"latitude":'+destLong.D+',"longitude":'+destLong.k+'}'
         }
         console.log(datastr)
         $.ajax({
