@@ -52,16 +52,11 @@
 
     <script>
     $('.approve').click(function(){
-    	$('.btn-group').hide();
-    	$('.meet').show();
+    	CheckRes('true');
+
 	});
 	$('.reject').click(function(){
-		$('.loader').show();
-		$('.answer').hide();
-		setTimeout(function () {
-		$('.loader').hide();
-		$('.answer').show();
-    	}, 1000);
+		CheckRes('false');
 	});
 
 	$("#question").html(window.localStorage.getItem("question"));
