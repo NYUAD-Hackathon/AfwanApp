@@ -15,7 +15,7 @@ function onSuccess(position) {
     */
                         
     var myLatlng = new google.maps.LatLng(Latitude,Longitude);
-    var mapOptions = {zoom: 4,center: myLatlng}
+    var mapOptions = {zoom: 14,center: myLatlng}
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     var marker = new google.maps.Marker({position: myLatlng,map: map,title: 'Afwan'});

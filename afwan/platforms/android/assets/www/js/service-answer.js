@@ -19,14 +19,14 @@ function goma()
 
 	var mapOptions = {
         zoom: 15, 
-        center: new google.maps.LatLng(24.4667,54.3667),
+        center: new google.maps.LatLng(24.522807,54.435447),
         mapTypeId : google.maps.MapTypeId.ROADMAP
 	}
 
 	//Cria o mapa do google, coloca as defini??es do mapa, como tipo de visualiza??o, pode ser ROADMAP, SATELLITE, HYBRID, TERRAIN
 	map = new google.maps.Map( mapDiv, mapOptions );
 
-	var myLatlng = new google.maps.LatLng(24.4667,54.3667);
+	var myLatlng = new google.maps.LatLng(24.522807,54.435447);
 	
 	wayA = new google.maps.Marker({
           position: myLatlng,
@@ -50,6 +50,7 @@ function goma()
 			
           position: event.latLng,
           map: map
+		  icon: 'http://wcdn3.dataknet.com/static/resources/icons/set28/58aac1c.png'
 		  
         });
         } else {

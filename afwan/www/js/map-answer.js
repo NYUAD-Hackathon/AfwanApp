@@ -3,7 +3,7 @@ $(document).ready(function () {
         div: '#map-canvas',
         lat: 24.522807,
         lng: 54.435447,
-        zoom: 12,
+        zoom: 14,
         zoomControl: true,
         zoomControlOpt: {
             style: 'SMALL',
@@ -16,7 +16,7 @@ $(document).ready(function () {
         origin: [24.522807, 54.435447],
         destination: [24.540274, 54.421541],
         travelMode: 'driving',
-        strokeColor: '#131540',
+        strokeColor: '#9C59B8',
         strokeOpacity: 0.6,
         strokeWeight: 6
 	});
