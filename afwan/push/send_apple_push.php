@@ -2,7 +2,7 @@
 $deviceToken = 'ddbcca070a5ea4bfd476eb2d0fa0e768dd7aa762cecc13225c9e54bb3e5f40d9';
 
 
-$payload['aps'] = array('alert' => 'There is $2 question available near you!', 'badge'
+$payload['aps'] = array('alert' => 'You have a response from a local!', 'badge'
 => 1, 'sound' => 'default'); $payload = json_encode($payload);
 
 #$passphrase = '***';
