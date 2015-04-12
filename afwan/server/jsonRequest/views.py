@@ -57,7 +57,7 @@ def getUnsolved(request):
 def reqAns(request, id):
 
     data = UserRespond.objects.filter(
-        requestID_id__exact=15).filter(accepted__exact=None)
+        requestID_id__exact=id).filter(accepted__exact=None)
     result = {}
     result.setdefault("list", [])
     for item in data:
