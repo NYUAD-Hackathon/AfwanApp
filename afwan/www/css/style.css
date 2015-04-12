@@ -393,3 +393,7 @@ hr.style {
     border-bottom: 1px dashed #ccc;
     background: #999;
 }
+
+.profile button {
+	background-color: rgba(255, 255, 255, 0);
+}

@@ -1,67 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Afwan - Map</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-  </head>
-  <body>
-	<div role="tabpanel">
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" id="profiletabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Questions History</a></li>
-  </ul>
+<head>
+	<title>Afwan - Map</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+</head>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-		<img class="img-circle" alt="140x140" data-holder-rendered="true" style="width: 140px; height: 140px;">
-	  <div class="form-group">
-		<label for="name">Name</label>
-		<input type="name" class="form-control" id="name" placeholder="" value="DUMMY">
-	  </div>
-	  <div class="form-group">
-		<label for="surname">Surname</label>
-		<input type="surname" class="form-control" id="name" placeholder="" value="DUMMY">
-	  </div>
-	  <div class="form-group">
-		<label for="email">Email address</label>
-		<input type="email" class="form-control" id="email" placeholder="" value="DUMMY">
-	  </div>
-	  <div class="form-group">
-		<label for="username">Username</label>
-		<input id="username" type="username" class="form-control" placeholder="Username">
-	  </div>
-	  <div class="form-group">
-		<label for="minimumpayoff">Minimum Payoff</label>
-		<input id="minimumpayoff" type="username" class="form-control" placeholder="Minimum Payoff">
-	  </div>
-	  <div class="form-group">
-		<label for="country">Country</label>
-		<input id="country" type="country" class="form-control" placeholder="" value="DUMMY">
-	  </div>
+<body>
+    <div class="btn-group service profile" role="group" aria-label="...">
+        <button type="button" class="btn" name="home"><span class='glyphicon glyphicon-home'></span></button>
+        <button type="button" class="btn" name="user"><span class='glyphicon glyphicon-user'></span></button>
+        <button type="button" class="btn" name="time"><span class='glyphicon glyphicon-time'></span></button>
+    </div>
+	<div class="box">
+		<h3>USER PROFILE</h3>
+		<div class="form-group res-group" id="home">
+			<div class="input-group"> <span class="input-group-addon tran"><span class='glyphicon glyphicon-user'></span></span>
+				<input type="text" class="form-control tran" placeholder="Username" id="username"> 
+			</div>
+			<div class="input-group"> <span class="input-group-addon tran"><span class='glyphicon glyphicon-map-marker'></span></span>
+				<input type="text" class="form-control tran" placeholder="City, Country" id="city"> 
+			</div>
+			<div class="input-group"> <span class="input-group-addon tran"><span class='glyphicon glyphicon-usd'></span></span>
+				<input type="text" class="form-control tran" placeholder="Minimum payoff" id="minimumpayoff"> 
+			</div>
+			<div class="input-group"> <span class="input-group-addon tran"><span class='glyphicon glyphicon-star'></span></span>
+				<input type="text" class="form-control tran" placeholder="Minimum rating" id="star"> 
+			</div>
+			<a href="map-question.html"><button type="button" class="btn btn-default">Edit</button></a>
+		</div>
 	</div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-		<div role="main" class="ui-content">
-			<ul data-role="listview" id="listview">
-		</ul>
-	</div>	
-	</div>
-  </div>
+	<script type="text/javascript" src="js/profile.js"></script>
+</body>
 
-</div>
-	
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/settingsprofile.js"></script>
-    
-  </body>
 </html>
