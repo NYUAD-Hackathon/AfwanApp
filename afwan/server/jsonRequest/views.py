@@ -25,7 +25,7 @@ def getUnsolvedHigh(request, payoff):
     result = getUnsolvedHigher(payoff)
     response = JsonResponse(result, status=200)
     response['access-control-allow-origin'] = '*'
-    return result
+    return response
 
 
 def getUnsolvedHigher(minimumRate):
@@ -51,7 +51,7 @@ def getUnsolved(request):
     result = getUnsolvedHigher(0)
     response = JsonResponse(result, status=200)
     response['access-control-allow-origin'] = '*'
-    return result
+    return response
 
 
 def reqAns(request, id):
