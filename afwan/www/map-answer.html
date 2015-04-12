@@ -20,6 +20,7 @@
                 <div id="pro_image"></div>
                 <div id="pro_details">
                     <div id="pro_name">Ahmad Khaled</div>
+                    <div id="pro_time">5 min away</div>
                     <span class='glyphicon glyphicon-star'></span>
                     <span class='glyphicon glyphicon-star'></span>
                     <span class='glyphicon glyphicon-star'></span>
@@ -38,7 +39,7 @@
             <a href="map-question.html">
                 <button type="button" class="btn btn-default meet">Follow-up</button>
             </a>
-                <script>
+            <script>
                 $('.approve').click(function() {
                     console.log('approve')
                     CheckRes('true');
@@ -46,11 +47,8 @@
                 $('.reject').click(function() {
                     CheckRes('false');
                 });
-                $("#question").html(window.localStorage.getItem("question"));
-                </script>
 
-
-
+            </script>
         </div>
     </script>
 </head>
@@ -61,6 +59,8 @@
         <div class="loader"></div>
     </div>
     <div id="map-canvas"></div>
+    <script>
+        $("#question").html(window.localStorage.getItem("question"));
+    </script>
 </body>
-
 </html>
