@@ -16,13 +16,16 @@ def getUser(request, id):
     result['username'] = user.username
     result['minimumpayoff'] = user.minimumpayoff
     output['result'] = result
-
-    return JsonResponse(output)
+    response = JsonResponse(output, status=200)
+    response['access-control-allow-origin'] = '*'
+    return response
 
 
 def getUnsolvedHigh(request, payoff):
     result = getUnsolvedHigher(payoff)
-    return JsonResponse(result)
+    response = JsonResponse(result, status=200)
+    response['access-control-allow-origin'] = '*'
+    return response
 
 
 def getUnsolvedHigher(minimumRate):
@@ -46,7 +49,9 @@ def getUnsolvedHigher(minimumRate):
 
 def getUnsolved(request):
     result = getUnsolvedHigher(0)
-    return JsonResponse(result)
+    response = JsonResponse(result, status=200)
+    response['access-control-allow-origin'] = '*'
+    return response
 
 
 def reqAns(request, id):
@@ -66,7 +71,9 @@ def reqAns(request, id):
 
         k['created_at'] = item.created_at.strftime('%Y/%m/%d %H:%M')
         result["list"].append(k)
-    return JsonResponse(result)
+    response = JsonResponse(result, status=200)
+    response['access-control-allow-origin'] = '*'
+    return response
 
 
 @csrf_exempt
@@ -94,7 +101,7 @@ def postRes(request):
                             "longitude", None), latitude=data.get("latitude", None))
         query.save()
 
-        response = HttpResponse(query.id,status=200)
+        response = HttpResponse(query.id, status=200)
         response['access-control-allow-origin'] = '*'
         return response
     except Exception as e:
