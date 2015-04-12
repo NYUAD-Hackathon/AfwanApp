@@ -57,14 +57,15 @@ $(document).ready(function() {
 
         window.localStorage.setItem("question", $("#questiontxt").val());
 
-        urlstr = "http://127.0.0.1:8000/req/";
+        urlstr = "http://ec2-54-149-21-125.us-west-2.compute.amazonaws.com/req/";
         var jsonData = '{"latitude":' + Latitude + ', "longitude" :' + Longitude + ', "payoff" : 1.5, "userID" :1 , "minimumRating" : 2, "content" : "' + $("#questiontxt").val() + '"}';
         var postdata = $.parseJSON(jsonData);
         var mypost = $.post(urlstr, jsonData).done(function(data) {
             // console.log(data)
             console.log('post was successful!');
             $.notify('Your question has been submited', 'sucess');
-            location.href = "map-answer.html?reqid="+data;
+            location.href = "map-answer.html"
+            window.localStorage.setItem("questionID", data);
         });
         mypost.fail(function() {
             console.log('post failed!');
