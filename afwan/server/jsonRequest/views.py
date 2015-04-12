@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def getUser(request, id):
-    user = User.objects.get(id=1)
+    user = User.objects.get(id=id)
     result = {}
     output = {}
     result['username'] = user.username
@@ -23,6 +23,28 @@ def getUser(request, id):
 
 def getUnsolvedHigh(request, payoff):
     result = getUnsolvedHigher(payoff)
+    response = JsonResponse(result, status=200)
+    response['access-control-allow-origin'] = '*'
+    return response
+
+
+def getUserReq(request, id):
+    data = UserRequest.objects.filter(
+        userID_id=id).order_by('-created_at')[:10]
+    result = {}
+    result.setdefault("list", [])
+    for item in data:
+        k = {}
+        k['id'] = item.id
+        k['username'] = item.userID.username
+        k['longitude'] = item.longitude
+        k['latitude'] = item.latitude
+        k['payoff'] = item.payoff
+        k['minimumRate'] = item.minimumRate
+        k['content'] = item.content
+        k['created_at'] = item.created_at.strftime('%Y/%m/%d %H:%M')
+        result["list"].append(k)
+    # result = getUnsolvedHigher(0)
     response = JsonResponse(result, status=200)
     response['access-control-allow-origin'] = '*'
     return response
