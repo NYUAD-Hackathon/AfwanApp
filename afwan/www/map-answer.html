@@ -30,7 +30,7 @@
         <div id="user">
         	<div id="pro_image"></div>
         	<div id="pro_details">
-				<div id="pro_name">Service Provider Name</div>
+				<div id="pro_name">Ahmad Khaled</div>
 				<span class='glyphicon glyphicon-star'></span>
 				<span class='glyphicon glyphicon-star'></span>
 				<span class='glyphicon glyphicon-star'></span>
@@ -40,10 +40,11 @@
         </div>
         <h4>ANSWER GOES HERE</h4>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" onclick="CheckRes('true')" class="btn btn-success approve">Approve</button>
-			<button type="button" onclick="CheckRes('false')" class="btn btn-danger">Reject</button>
+			<button type="button" class="btn btn-success approve">Approve</button>
+			<button type="button" class="btn btn-danger reject">Reject</button>
 		</div>
           <a href="#"><button type="button" class="btn btn-default meet">Let's meet!</button></a>
+          <a href="#"><button type="button" class="btn btn-default meet">Follow-up</button></a>
         </div>
     </div>
     <div id="map-canvas"></div>
@@ -52,6 +53,14 @@
     $('.approve').click(function(){
     	$('.btn-group').hide();
     	$('.meet').show();
+	});
+	$('.reject').click(function(){
+		$('.loader').show();
+		$('.answer').hide();
+		setTimeout(function () {
+		$('.loader').hide();
+		$('.answer').show();
+    	}, 1000);
 	});
 
 	$("#question").html(window.localStorage.getItem("question"));
